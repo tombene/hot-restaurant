@@ -31,7 +31,7 @@ app.get("/", function(req, res) {
 });
 
 // make reservation
-app.get("/reserve", function(req, res) {
+app.get("/reservations", function(req, res) {
   res.sendFile(path.join(__dirname, "reservations.html"));
 });
 
@@ -55,7 +55,7 @@ app.get("/api/waitlist", function(req, res){
 	return res.json(waitingList);
 });
 
-app.get("/tables#", function(req, res){
+app.get("/#", function(req, res){
 	reservations = [];
 	waitingList = [];
 	alert('Clearing...');
@@ -78,6 +78,8 @@ app.post("/api/reservations", function(req,res){
 		waitingList.push(newReservation);
 		alert("You've been added to the waiting list");
 	}
+
+	res.json(newReservation);
 	
 });
 // Starts the server to begin listening

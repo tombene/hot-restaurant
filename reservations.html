@@ -20,8 +20,8 @@
 					<hr class="my-4">
 					<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
 					<p class="lead">
-						<a class="btn btn-primary btn-lg" href="#" role="button">View Tables</a>
-						<a class="btn btn-primary btn-lg" href="#" role="button">Home</a>
+						<a class="btn btn-primary btn-lg" href="tables" role="button">View Tables</a>
+						<a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
 					</p>
 				</div>
 			</div>
@@ -52,13 +52,14 @@
 
 		<div class="row">
 			<div class="col">
-				<a href="http://">API Table Link | </a>
-				<a href="http://">Api Wait List</a>
+				<a href="/api/reserved">API Table Link | </a>
+				<a href="/api/waitlist">Api Wait List</a>
 				<!-- <a href="http://">Clear Page</a> -->
 			</div>
 		</div>
 	</div>
 	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	 crossorigin="anonymous"></script>
 	<script>
@@ -67,7 +68,7 @@
 		$("#add-btn").on("click", function (event) {
 			event.preventDefault();
 			var newCharacter = {
-				name: $("#namedInput").val().trim(),
+				name: $("#nameInput").val().trim(),
 				phoneNumber: $("#phoneNumber").val().trim(),
 				email: $("#emailInput").val().trim(),
 				id: $("#uniqueID").val().trim()
