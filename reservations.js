@@ -48,6 +48,14 @@ app.get("/api/reservations", function(req, res) {
   return res.json(reservations,waitingList);
 });
 
+app.get("/api/reserved", function(req, res){
+	return res.json(reservations);
+});
+
+app.get("/api/waitlist", function(req, res){
+	return res.json(waitingList);
+});
+
 //Create New Reservations
 app.post("/api/reservations", function(req,res){
 	var newReservation = req.body;
