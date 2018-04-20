@@ -52,6 +52,8 @@ app.get("/api/reservations", function(req, res) {
 //Create New Reservations
 app.post("/api/reservations", function(req,res){
 	var newReservation = req.body;
+
+	newReservation.name = newcha
 	console.log(newReservation);
 	// newReservation.customerName = 
 });

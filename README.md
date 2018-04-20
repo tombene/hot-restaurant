@@ -39,8 +39,6 @@ After 5 reservations we add it to the waiting list
 
 ##Create server
 
-<<<<<<< HEAD
-=======
 
 
 Instructions:
@@ -88,7 +86,6 @@ waiting list -
 displays incoming data
 links to API table and wait list adn clear table option -
 
->>>>>>> 025e86935a85ad5c9ed2e177f9d9760c71cef5ce
 ###Dependencies Include
 NPM i express
 npm i body-parser
