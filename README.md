@@ -2,10 +2,12 @@
 
 ##Creat reservations
 array of reservations
+array of those on waiting list
 5 tables available 
 After 5 reservations we add it to the waiting list
 
 ##Create server
+
 
 
 Instructions:
@@ -52,3 +54,17 @@ displays incoming data
 waiting list -
 displays incoming data
 links to API table and wait list adn clear table option -
+
+###Dependencies Include
+NPM i express
+npm i body-parser
+require("path")
+##GET
+Changing page location
+Resevations made
+Those on waiting list
+##POST
+reservation
+waiting list
+
+
