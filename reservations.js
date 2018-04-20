@@ -22,7 +22,6 @@ var reservations = [{
 	customerId: "uniqueid"
 }];
 var waitingList = [];
-var remaining = 5;
 // Routes
 // =============================================================
 
@@ -56,6 +55,12 @@ app.get("/api/waitlist", function(req, res){
 	return res.json(waitingList);
 });
 
+app.get("/tables#", function(req, res){
+	reservations = [];
+	waitingList = [];
+	alert('Clearing...');
+});
+
 //Create New Reservations
 app.post("/api/reservations", function(req,res){
 	var newReservation = req.body;
@@ -65,6 +70,14 @@ app.post("/api/reservations", function(req,res){
 	newReservation.name = newReservation.email.replace(/\s+/g, "").toLowerCase();
 	newReservation.name = newReservation.id.replace(/\s+/g, "").toLowerCase();
 	console.log(newReservation);
+	
+	if (reservations.length < 5) {
+		reservations.push(newReservation);
+		alert("You've been added to the reservation list");
+	} else {
+		waitingList.push(newReservation);
+		alert("You've been added to the waiting list");
+	}
 	
 });
 // Starts the server to begin listening
