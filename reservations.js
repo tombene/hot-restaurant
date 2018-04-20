@@ -29,19 +29,18 @@ var remaining = 5;
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
 	res.sendFile(path.join(__dirname, "home.html"));
-	res.send("hello hot restaurant");
-
-
 });
 
 // make reservation
 app.get("/reserve", function(req, res) {
-  res.sendFile(path.join(__dirname, "reserve.html"));
+  res.sendFile(path.join(__dirname, "reservations.html"));
 });
 
 // show reservatios
 app.get("/tables", function(req, res) {
-  res.sendFile(path.join(__dirname, "tables.html"));
+	res.sendFile(path.join(__dirname, "tables.html"));
+	
+
 });
 
 // Displays all reservations
@@ -53,12 +52,18 @@ app.get("/api/reservations", function(req, res) {
 app.post("/api/reservations", function(req,res){
 	var newReservation = req.body;
 
-	newReservation.name = newcha
+	newReservation.name = newReservation.name.replace(/\s+/g, "").toLowerCase();
+	newReservation.name = newReservation.phoneNumber.replace(/\s+/g, "").toLowerCase();
+	newReservation.name = newReservation.email.replace(/\s+/g, "").toLowerCase();
+	newReservation.name = newReservation.id.replace(/\s+/g, "").toLowerCase();
 	console.log(newReservation);
-	// newReservation.customerName = 
+	
 });
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
+
+
+  
