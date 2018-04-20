@@ -61,6 +61,26 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	 crossorigin="anonymous"></script>
+	<script>
+
+		// Question: What does this code do?
+		$("#add-btn").on("click", function (event) {
+			event.preventDefault();
+			var newCharacter = {
+				name: $("#namedInput").val().trim(),
+				phoneNumber: $("#phoneNumber").val().trim(),
+				email: $("#emailInput").val().trim(),
+				id: $("#uniqueID").val().trim()
+			};
+
+			// Question: What does this code do??
+			$.post("/api/reservations", newReservation)
+				.then(function (data) {
+					console.log("reservations.html", data);
+					alert("Adding reservation...");
+				});
+		});
+	</script>
 </body>
 
 </html>

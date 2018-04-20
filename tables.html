@@ -59,6 +59,28 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	 crossorigin="anonymous"></script>
+	 <script type="text/javascript">
+      $.get("/api/reservations/", function(reserved,waitlist) {
+
+				for(let i = 0; i < reserved.length; i++){
+					var row = $("<tr>");
+					var td = $("<td>");
+					td.append(i);
+					td.append(reserve[i].id);
+					row.append(td);
+					$("#reservation").append(row);
+				}
+				for(let i = 0; i < waitlist.length; i++){
+					var row = $("<tr>");
+					var td = $("<td>");
+					td.append(i);
+					td.append(waitlist[i].id);
+					row.append(td);
+					$("#waiting").append(row);
+				}
+      });
+
+  </script>
 </body>
 
 </html>
